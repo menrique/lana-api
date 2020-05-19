@@ -40,11 +40,11 @@ module.exports = (mongoose, engine) => {
                     ],
                 },
                 {
-                    code: '3185dcd8-2b87-4ce7-8cc3-5547a6a7558b',
+                    code: '2050ed8d-54f2-470a-ace4-1911df214409',
                     items: [
                         {
                             sku: 'A304SD',
-                            name: '2050ed8d-54f2-470a-ace4-1911df214409',
+                            name: 'Alexa Speaker',
                             quantity: 3
                         },
                     ],
@@ -71,5 +71,5 @@ module.exports = (mongoose, engine) => {
         async find(code) {
             return Cart.findOne({code: code});
         }
-    }
-}
+    };
+};

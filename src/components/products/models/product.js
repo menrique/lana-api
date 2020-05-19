@@ -1,7 +1,7 @@
 // Product model definition
 module.exports = (mongoose) => {
 
-    // Define schema
+    // Set schema
     const schema = new mongoose.Schema({
         sku: String,
         name: String,
@@ -20,4 +20,4 @@ module.exports = (mongoose) => {
     // Return model
     const {Product} = mongoose.models;
     return Product || mongoose.model('Product', schema);
-}
+};

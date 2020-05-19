@@ -19,4 +19,4 @@ module.exports = async (app, express, mongoose) => {
 
     // Register the router
     app.use('/products', router);
-}
+};

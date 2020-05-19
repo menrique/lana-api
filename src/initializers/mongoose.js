@@ -22,4 +22,4 @@ module.exports = async (config) => {
 
     // Return the reference
     return mongoose
-}
+};

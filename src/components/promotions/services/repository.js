@@ -17,53 +17,47 @@ module.exports = (mongoose) => {
                 {
                     code: '20P01',
                     description: 'But 1 MacBook Pro and get a free Raspberry Pi B',
-                    type: 'BuyGetFree',
-                    rule: {
-                        target: {
-                            sku: '43N23P',
-                            quantity: 1,
-                        },
-                        bonus: {
-                            sku: '234234',
-                            quantity: 1,
-                            price: 0,
-                            percent: false,
-                        },
-                    }
+                    type: 'buyGetFree',
+                    target: {
+                        sku: '43N23P',
+                        quantity: 1,
+                    },
+                    prize: {
+                        sku: '234234',
+                        quantity: 1,
+                        discount: null,
+                        percent: false,
+                    },
                 },
                 {
                     code: '20P08',
                     description: 'Buy 3 Google Homes for the price of 2',
-                    type: 'BuyGetDiscount',
-                    rule: {
-                        target: {
-                            sku: '120P90',
-                            quantity: '3',
-                        },
-                        bonus: {
-                            sku: '120P90',
-                            quantity: 1,
-                            price: 0,
-                            percent: false,
-                        },
+                    type: 'buyGetDiscount',
+                    target: {
+                        sku: '120P90',
+                        quantity: '3',
+                    },
+                    prize: {
+                        sku: '120P90',
+                        quantity: 1,
+                        discount: 100,
+                        percent: true,
                     },
                 },
                 {
                     code: '20P13',
                     description: 'Buy more than 3 Alexa Speakers and get 10% discount on all Alexa speakers',
-                    type: 'BuyGetDiscount',
-                    rule: {
+                    type: 'buyGetDiscount',
                         target: {
                             sku: 'A304SD',
                             quantity: 3,
                         },
-                        bonus: {
+                        prize: {
                             sku: 'A304SD',
                             quantity: null,
-                            price: 10,
+                            discount: 10,
                             percent: true,
                         },
-                    },
                 },
             ];
             Promotion.insertMany(promotions, (error, docs) => {
@@ -82,5 +76,5 @@ module.exports = (mongoose) => {
         async get(criteria = {}) {
             return await Promotion.find(criteria);
         }
-    }
-}
+    };
+};

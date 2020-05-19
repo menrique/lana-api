@@ -12,8 +12,8 @@ module.exports = async (express, mongoose) => {
     const bodyParser = require('body-parser');
     app.use(bodyParser.urlencoded({ extended: true }));
 
-    // Load application modules
-    const modulesInit = require('./modules')
+    // Load application components
+    const modulesInit = require('./components')
     await modulesInit(app, express, mongoose);
 
     // Handle missing routes
@@ -36,4 +36,4 @@ module.exports = async (express, mongoose) => {
 
     // Return the express app
     return app;
-}
+};

@@ -35,5 +35,5 @@ module.exports = (mongoose) => {
         async get(criteria = {}) {
             return await Product.find(criteria);
         },
-    }
-}
+    };
+};

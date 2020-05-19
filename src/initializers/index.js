@@ -8,4 +8,4 @@ module.exports = async (config) => {
     const express = require("express");
     const expressInit = require('./express')
     return await expressInit(express, mongoose);
-}
+};

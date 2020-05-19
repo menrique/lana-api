@@ -1,22 +1,20 @@
 // Product model definition
 module.exports = (mongoose) => {
 
-    // Define schema
+    // Set schema
     const schema = new mongoose.Schema({
         code: String,
         description: String,
         type: String,
-        rule: {
-            target: {
-                sku: String,
-                quantity: Number,
-            },
-            bonus: {
-                sku: String,
-                quantity: Number,
-                price: Number,
-                percent: Boolean,
-            },
+        target: {
+            sku: String,
+            quantity: Number,
+        },
+        prize: {
+            sku: String,
+            quantity: Number,
+            discount: Number,
+            percent: Boolean,
         },
     }, {
         toJSON: {
@@ -31,4 +29,4 @@ module.exports = (mongoose) => {
     // Return model
     const {Promotion} = mongoose.models;
     return Promotion || mongoose.model('Promotion', schema);
-}
+};

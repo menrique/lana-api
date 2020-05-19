@@ -13,12 +13,12 @@ module.exports = async (app, express, mongoose) => {
 
     // *** Routes ***
 
-    // Get all carts
+    // Get all carts (no appraisal)
     router.get('/', (req, res) => {
         repository.get().then(carts => res.json(carts).status(200));
     });
 
-    // Get given cart
+    // Get given cart (appraised)
     router.get('/:code', (req, res) => {
         repository.find(req.params.code).then(
             cart => cart.toJSONAsync().then(
@@ -31,11 +31,11 @@ module.exports = async (app, express, mongoose) => {
     router.get('/:code/checkout', (req, res) => {
         repository.find(req.params.code).then(
             cart => engine.checkout(cart).then(
-                json => res.send(json).status(200)
+                checkout => res.json(checkout).status(200)
             )
         );
     });
 
     // Register the router
     app.use('/carts', router);
-}
+};
