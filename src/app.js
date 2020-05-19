@@ -1,13 +1,12 @@
-// Dependencies
-const express = require("express");
-const init = require('./initializers');
-const config = require('./config');
-
 // Application starter
 async function startApp() {
 
-    // Initialize the application
-    const app = await init(express, config);
+    // Load configuration
+    const config = require('./config');
+
+    // Initialize application
+    const init = require('./initializers');
+    const app = await init(config);
 
     // Serve the app using the configured port
     app.listen(config.port, err => {

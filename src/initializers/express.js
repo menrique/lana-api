@@ -1,21 +1,20 @@
-const logger = require('morgan');
-const bodyParser = require('body-parser');
-const modulesInit = require('./modules')
-
 // Express initializer
-module.exports = async (express) => {
+module.exports = async (express, mongoose) => {
 
     // Create express application
     const app = express();
 
     // Set logger
+    const logger = require('morgan');
     app.use(logger('tiny'));
 
     // Allow rich objects and arrays to be encoded in the URL
+    const bodyParser = require('body-parser');
     app.use(bodyParser.urlencoded({ extended: true }));
 
     // Load application modules
-    await modulesInit(app, express);
+    const modulesInit = require('./modules')
+    await modulesInit(app, express, mongoose);
 
     // Handle missing routes
     app.use((req, res, next) => {

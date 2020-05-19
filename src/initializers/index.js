@@ -1,14 +1,11 @@
-const expressInit = require('./express');
-const mongooseInit = require('./mongoose');
-
 // Application initializer
-module.exports = async (express, config) => {
+module.exports = async (config) => {
 
-    // Load RDM
-    const mongoConnection = await mongooseInit(config);
+    // Initialize RDM
+    const mongoose = await require('./mongoose')(config);
 
-    // ...
-
-    // Return initialized application
-    return await expressInit(express);
+    // Return initialized express app
+    const express = require("express");
+    const expressInit = require('./express')
+    return await expressInit(express, mongoose);
 }
