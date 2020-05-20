@@ -196,6 +196,8 @@ promotions at the checkout.
 * There is no authentication/authorization yet applied.
 * The modeled data only respond to the available inventory, promotions and cart example scenarios.
 
+Let's run `npm test` to check the following examples:
+
 #### 1. Get available products
 
 **Request:**
@@ -408,7 +410,6 @@ Accept: application/json
       "name": "Raspberry Pi B"
     }
   ],
-  "appraisedAt": "2020-05-19T22:33:34.731Z"
 }
 ```
 
@@ -439,7 +440,6 @@ Accept: application/json
       "name": "Google Home"
     }
   ],
-  "appraisedAt": "2020-05-19T22:33:11.155Z"
 }
 ```
 
@@ -447,7 +447,7 @@ Accept: application/json
 
 **Request:**
 ```http request
-GET http://localhost:3000/carts/3185dcd8-2b87-4ce7-8cc3-5547a6a7558b
+GET http://localhost:3000/carts/2050ed8d-54f2-470a-ace4-1911df214409
 Accept: application/json
 ```
 
@@ -470,7 +470,6 @@ Accept: application/json
       "name": "Alexa Speaker"
     }
   ],
-  "appraisedAt": "2020-05-19T22:32:39.064Z"
 }
 ```
 
@@ -488,8 +487,6 @@ Accept: application/json
   "subtotal": 5429.99,
   "discount": 30,
   "total": 5399.99,
-  "code": "eb32aa12-7606-4b1f-95e7-2998a5290a9d",
-  "moment": "2020-05-19T22:29:07.939Z",
   "cart": {
     "subtotal": 5429.99,
     "discount": 30,
@@ -522,7 +519,6 @@ Accept: application/json
         "name": "Raspberry Pi B"
       }
     ],
-    "appraisedAt": "2020-05-19T22:29:07.942Z"
   }
 }
 ```
@@ -541,8 +537,6 @@ Accept: application/json
   "subtotal": 149.97,
   "discount": 49.99,
   "total": 99.98,
-  "code": "fc3e5a8e-f42a-4f2e-942b-ce695ff84c30",
-  "moment": "2020-05-19T22:28:22.024Z",
   "cart": {
     "subtotal": 149.97,
     "discount": 49.99,
@@ -565,7 +559,6 @@ Accept: application/json
         "name": "Google Home"
       }
     ],
-    "appraisedAt": "2020-05-19T22:28:22.026Z"
   }
 }
 ```
@@ -584,8 +577,6 @@ Accept: application/json
   "subtotal": 328.5,
   "discount": 32.85,
   "total": 295.65,
-  "code": "f8d13f7f-a75a-42b8-a837-f35e061f49f2",
-  "moment": "2020-05-19T22:27:17.646Z",
   "cart": {
     "subtotal": 328.5,
     "discount": 32.85,
@@ -608,7 +599,6 @@ Accept: application/json
         "name": "Alexa Speaker"
       }
     ],
-    "appraisedAt": "2020-05-19T22:27:17.654Z"
   }
 }
 ```

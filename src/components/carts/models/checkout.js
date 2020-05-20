@@ -23,6 +23,8 @@ module.exports = (mongoose, cartSchema) => {
             transform: (doc, ret, options) => {
                 delete ret._id;
                 delete ret.__v;
+                delete ret.code;
+                delete ret.moment;
                 return ret;
             },
         }
